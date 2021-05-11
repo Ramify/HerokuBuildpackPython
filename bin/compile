@@ -20,9 +20,12 @@ if [ -f $ENV_DIR/PROJECT_PATH ]; then
 		cp -R $BUILD_DIR/$PROJECT_PATH/. $TMP_DIR/
 	 	echo "       cleaning build dir $BUILD_DIR"
 		rm -rf $BUILD_DIR/*
-		echo "       copying preserved work dir from cache $TMP_DIR to build dir $BUILD_DIR"
-		cp -R $TMP_DIR/. $BUILD_DIR/lab_back/
-		mv $BUILD_DIR/lab_back/requirements.txt $BUILD_DIR
+		echo "       copying preserved work dir from cache $TMP_DIR to build dir $BUILD_DIR/$PROJECT_PATH"
+		cp -R $TMP_DIR/. $BUILD_DIR/$PROJECT_PATH
+		echo "       moving requirements.txt from $BUILD_DIR/$PROJECT_PATH to $BUILD_DIR"
+		mv $BUILD_DIR/$PROJECT_PATH/requirements.txt $BUILD_DIR
+		echo "       moving Procfile from $BUILD_DIR/$PROJECT_PATH to $BUILD_DIR"
+		mv $BUILD_DIR/$PROJECT_PATH/Procfile $BUILD_DIR
 		echo "       cleaning tmp dir $TMP_DIR"
 		rm -rf $TMP_DIR
 		exit 0
