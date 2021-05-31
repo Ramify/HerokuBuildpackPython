@@ -27,6 +27,8 @@ if [ -f $ENV_DIR/PROJECT_PATH ]; then
 		mv $BUILD_DIR/$PROJECT_PATH/requirements.txt $BUILD_DIR
 		echo "       moving Procfile from $BUILD_DIR/$PROJECT_PATH to $BUILD_DIR"
 		mv $BUILD_DIR/$PROJECT_PATH/Procfile $BUILD_DIR
+		echo "       moving runtime from $BUILD_DIR/$PROJECT_PATH to $BUILD_DIR"
+		mv $BUILD_DIR/$PROJECT_PATH/runtime.txt $BUILD_DIR # tmp
 		echo "       cleaning tmp dir $TMP_DIR"
 		rm -rf $TMP_DIR
 		exit 0
