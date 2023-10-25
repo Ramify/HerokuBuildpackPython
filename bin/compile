@@ -25,6 +25,8 @@ if [ -f $ENV_DIR/PROJECT_PATH ]; then
 		cp -R $TMP_DIR/. $BUILD_DIR/$PROJECT_PATH
 		echo "       moving requirements.txt from $BUILD_DIR/$PROJECT_PATH to $BUILD_DIR"
 		mv $BUILD_DIR/$PROJECT_PATH/requirements.txt $BUILD_DIR
+		echo "       moving Aptfile from $BUILD_DIR/$PROJECT_PATH to $BUILD_DIR"
+		mv $BUILD_DIR/$PROJECT_PATH/Aptfile $BUILD_DIR
 		echo "       moving Procfile from $BUILD_DIR/$PROJECT_PATH to $BUILD_DIR"
 		mv $BUILD_DIR/$PROJECT_PATH/Procfile $BUILD_DIR
 		echo "       moving runtime from $BUILD_DIR/$PROJECT_PATH to $BUILD_DIR"
